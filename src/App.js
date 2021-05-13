@@ -2,6 +2,7 @@ import React, {useEffect , useState} from 'react'
 import axios from 'axios'
 import './App.css';
 import LeftDrawer from './components/Drawer/Drawer';
+import QuraanEKareem from './components/QuraanEkareem/QuraanEKareem';
 
 function App() {
 
@@ -30,14 +31,14 @@ function App() {
             // console.log((response.data.data.surahs));
             // setData(response.data.data.surahs)
         })
-
-
-
     }, [])
+
+    
     return ( 
         <div>
             {/* <h1>Al-Quran</h1> */}
             <LeftDrawer />
+            <QuraanEKareem />
         </div>
     );
 }
