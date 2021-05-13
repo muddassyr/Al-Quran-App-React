@@ -20,6 +20,14 @@ import MailIcon from '@material-ui/icons/Mail';
 import AudiotrackIcon from '@material-ui/icons/Audiotrack';
 import BookIcon from '@material-ui/icons/Book';
 import '../css/style.css'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Audio from '../Audio/Audio';
+import QuraanEKareem from '../QuraanEkareem/QuraanEKareem';
 
 const drawerWidth = 240;
 
@@ -102,51 +110,53 @@ export default function LeftDrawer() {
   };
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, {
-              [classes.hide]: open,
-            })}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Quraan Kareem
+    <Router>
+
+      <div className={classes.root}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              className={clsx(classes.menuButton, {
+                [classes.hide]: open,
+              })}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap>
+              Quraan Kareem
           </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        variant="permanent"
-        className={clsx(classes.drawer, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
-        })}
-        classes={{
-          paper: clsx({
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          className={clsx(classes.drawer, {
             [classes.drawerOpen]: open,
             [classes.drawerClose]: !open,
-          }),
-        }}
-      >
-        <div className={classes.toolbar}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        {/* <List>
+          })}
+          classes={{
+            paper: clsx({
+              [classes.drawerOpen]: open,
+              [classes.drawerClose]: !open,
+            }),
+          }}
+        >
+          <div className={classes.toolbar}>
+            <IconButton onClick={handleDrawerClose}>
+              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            </IconButton>
+          </div>
+          <Divider />
+          {/* <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
@@ -155,26 +165,50 @@ export default function LeftDrawer() {
           ))}
         </List>
         <Divider /> */}
-        <List className={classes.ulClass}>
-          <ListItem>
-            <ListItemIcon>
-              <AudiotrackIcon />
-            </ListItemIcon>
-            <ListItemText primary='Audio' />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <BookIcon />
-            </ListItemIcon>
-            <ListItemText primary='Quran Kareem' />
-          </ListItem>
-        </List>
+          {/* <Switch> */}
 
-      </Drawer>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-    
-      </main>
-    </div>
+          <List className={classes.ulClass}>
+            <ListItem>
+              <Link to='/'>
+                <ListItemIcon>
+                  <AudiotrackIcon />
+                </ListItemIcon>
+              </Link>
+              <ListItemText primary='Audio' />
+            </ListItem>
+            <ListItem>
+              <Link to='/quranekareem'>
+                <ListItemIcon>
+                  <BookIcon />
+                </ListItemIcon>
+              </Link>
+              <ListItemText primary='Quran Kareem' />
+            </ListItem>
+          </List>
+
+          {/* </Switch> */}
+
+
+
+        </Drawer>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+
+        </main>
+      </div>
+      <>
+        <Switch>
+
+          <Route exact path='/'>
+            <Audio />
+          </Route>
+          <Route path='/quranekareem'>
+            <QuraanEKareem />
+          </Route>
+        </Switch>
+
+      </>
+    </Router>
+
   );
 }
