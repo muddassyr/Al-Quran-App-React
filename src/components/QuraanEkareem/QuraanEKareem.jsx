@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
   mapInside: {
     display: 'flex',
     flexDirection: 'column',
-    border: '1px solid black'
+    color: 'black'
+    // border: '1px solid black'
   },
   apterMapInside: {
     display: 'flex',
@@ -79,8 +80,8 @@ export default function QuraanEKareem() {
                   </div>
 
                   <div className={classes.apterMapInside}>
-                    <h4>{value.englishNameTranslation}:{value.numberOfAyahs}</h4>
-                    <h4>{value.revelationType}</h4>
+                    <h6>{value.englishNameTranslation}:{value.numberOfAyahs}</h6>
+                    <h6>{value.revelationType}</h6>
                   </div>
 
                 </div>
