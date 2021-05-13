@@ -120,7 +120,7 @@ export default function LeftDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Mini variant drawer
+            Quraan Kareem
           </Typography>
         </Toolbar>
       </AppBar>
@@ -163,7 +163,7 @@ export default function LeftDrawer() {
             <ListItemIcon>
               <BookIcon />
             </ListItemIcon>
-            <ListItemText primary='Quran' />
+            <ListItemText primary='Quran Kareem' />
           </ListItem>
         </List>
 
