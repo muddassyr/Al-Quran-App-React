@@ -33,12 +33,12 @@ function App() {
         })
     }, [])
 
-    
+
     return ( 
         <div>
             {/* <h1>Al-Quran</h1> */}
             <LeftDrawer />
-            <QuraanEKareem />
+            {/* <QuraanEKareem /> */}
         </div>
     );
 }
