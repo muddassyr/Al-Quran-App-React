@@ -13,6 +13,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  paperBackGround: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    // color: theme.palette.text.secondary,
+    backgroundColor: '#3F51B5',
+    color: '#fff'
+  },
+  mapInside: {
+    display: 'flex',
+    flexDirection: 'column',
+    border: '1px solid black'
+  },
+  apterMapInside: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    // border: '1px solid black'
+
+  },
 }));
 
 export default function QuraanEKareem() {
@@ -43,27 +62,46 @@ export default function QuraanEKareem() {
 
   return (
     <div className={classes.root} className='mediaScreen'>
-      <Grid container spacing={3}>
-        {data.map((value, index) => {
-          // console.log(value);
-          return (
-            <div key={index}>
-              <Grid item xs={12}>
-                <Paper className={classes.paper} >{value.number}</Paper>
-              </Grid>
+      {/* <Grid container spacing={3}> */}
+      <Grid item xs={12}>
+        <Paper className={classes.paperBackGround} >Surah Details</Paper>
+      </Grid>
+      {data.map((value, index) => {
+        // console.log(value);
+        return (
+          <div key={index}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <div className={classes.mapInside}>
+                  <div className={classes.apterMapInside}>
+                    <h4>{value.number}-{value.englishName}</h4>
+                    <h4>{value.name}</h4>
+                  </div>
 
-            </div>
-          )
-        })
+                  <div className={classes.apterMapInside}>
+                    <h4>{value.englishNameTranslation}:{value.numberOfAyahs}</h4>
+                    <h4>{value.revelationType}</h4>
+                  </div>
 
-        }
-        {/* <Grid item xs={6}>
+                </div>
+                {/* {value.number} {value.englishName} {value.name}
+                {value.numberOfAyahs} {value.revelationType} */}
+              </Paper>
+
+            </Grid>
+
+          </div>
+        )
+      })
+
+      }
+      {/* <Grid item xs={6}>
           <Paper className={classes.paper}>xs=6</Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.paper}>xs=3</Paper>
         </Grid> */}
-      </Grid>
+      {/* </Grid> */}
     </div>
   );
 }
