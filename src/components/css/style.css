@@ -16,24 +16,24 @@
 /* QuraanEKareem page work */
 
 /* On screens that are 375px or less, set the margin left */
-@media screen and (min-width: 375px) {
+/* @media screen and (max-width: 375px) {
     .mediaScreen {
       margin-left: 17% ;
       margin-right: 1% !important;
     }
-  }
+  } */
 /* On screens that are 415px or less, set the margin left */
-@media screen and (min-width: 415px) {
+/* @media screen and (max-width: 415px) {
     .mediaScreen {
       margin-left: 15% ;
       margin-right: 1% !important;
     }
   }
-
+ */
 
 /* without mediaScreen  */
 
-.mediaScreen{
+/* .mediaScreen{
     max-width: 900px ;
     min-width: 600px;
-}
+} */
