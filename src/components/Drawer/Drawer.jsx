@@ -15,8 +15,8 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import MailIcon from '@material-ui/icons/Mail';
 import AudiotrackIcon from '@material-ui/icons/Audiotrack';
 import BookIcon from '@material-ui/icons/Book';
 import '../css/style.css'
@@ -28,6 +28,7 @@ import {
 } from "react-router-dom";
 import Audio from '../Audio/Audio';
 import QuraanEKareem from '../QuraanEkareem/QuraanEKareem';
+import Surah from '../QuraanEkareem/Surah';
 
 const drawerWidth = 240;
 
@@ -94,6 +95,9 @@ const useStyles = makeStyles((theme) => ({
   ulClass: {
     marginRight: 0,
   },
+  titleColor: {
+    color: 'white',
+  },
 }));
 
 export default function LeftDrawer() {
@@ -132,7 +136,7 @@ export default function LeftDrawer() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap>
+            <Typography variant="h6" noWrap className={classes.titleColor}>
               Quraan Kareem
           </Typography>
           </Toolbar>
@@ -193,21 +197,26 @@ export default function LeftDrawer() {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
+          <>
+            <Switch>
+
+              <Route exact path='/'>
+                <Audio />
+              </Route>
+              <Route exact path='/quranekareem'>
+                <QuraanEKareem />
+              </Route>
+              <Route path='/quranekareem/:id'>
+                <Surah />
+              </Route>
+              <Route path='*' component={() => <h1>404 Not Found</h1>} />
+
+            </Switch>
+
+          </>
 
         </main>
       </div>
-      <>
-        <Switch>
-
-          <Route exact path='/'>
-            <Audio />
-          </Route>
-          <Route path='/quranekareem'>
-            <QuraanEKareem />
-          </Route>
-        </Switch>
-
-      </>
     </Router>
 
   );
