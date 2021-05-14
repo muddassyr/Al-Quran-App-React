@@ -69,18 +69,15 @@ export default function Surah() {
             method: 'get',
             url: 'http://api.alquran.cloud/v1/quran/{{edition}}', // 
         }).then((response) => {
-            console.log(response, 'responese');
+            // console.log(response, 'responese');
             setData(response.data.data.surahs)
-            console.log(getSurah, 'get surah');
-            if (getSurah) return setGetSurahAyahs(getSurah.ayahs)
-
-
-
-
+            // console.log(getSurah, 'get surah');            
         })
-    }, [data])
-    console.log(getSurah, 'get surah');
-    console.log(getSurahAyahs, 'get surah ayahs');
+        if (getSurah) return setGetSurahAyahs(getSurah.ayahs)
+
+    }, [getSurah])
+    // console.log(getSurah, 'get surah');
+    // console.log(getSurahAyahs, 'get surah ayahs');
 
 
     // const getSurahAyahs = getSurah.ayahs
