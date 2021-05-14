@@ -58,7 +58,7 @@ export default function QuraanEKareem() {
     }).then((response) => {
       // console.log(response, 'responese');
       // console.log(response.data.data);
-      console.log((response.data.data.surahs));
+      // console.log((response.data.data.surahs));
       setData(response.data.data.surahs)
     })
   }, [])
