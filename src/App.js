@@ -1,8 +1,8 @@
-import React, {useEffect , useState} from 'react'
+import React, {useEffect} from 'react'
 import axios from 'axios'
 import './App.css';
 import LeftDrawer from './components/Drawer/Drawer';
-import QuraanEKareem from './components/QuraanEkareem/QuraanEKareem';
+// import QuraanEKareem from './components/QuraanEkareem/QuraanEKareem';
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
             // url: 'http://api.alquran.cloud/v1/sajda/{{edition}}',//Sajda - Get all verses requiring Sajda / Prostration in the Quran
             // url: 'http://api.alquran.cloud/v1/meta',//Meta - Get meta data about Surahs, Pages, Hizbs and Juzs
         }).then((response) => {
-            console.log(response, 'responese');
+            // console.log(response, 'responese');
             // console.log(response.data.data);
             // console.log((response.data.data.surahs));
             // setData(response.data.data.surahs)
