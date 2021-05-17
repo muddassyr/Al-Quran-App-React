@@ -1,23 +1,74 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
+// import groupBy from "lodash/groupBy";
+
 import './audio.css'
 
 export default function Audio() {
 
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
 
     useEffect(() => {
 
         axios({
             method: 'get',
             // url: 'http://api.alquran.cloud/v1/edition', // get  audio
-            url: 'http://api.alquran.cloud/v1/meta',//Meta - Get meta data about Surahs, Pages, Hizbs and Juzs
+            // url: 'http://api.alquran.cloud/surah', // get  audio
+            // url: 'http://api.alquran.cloud/edition?format=text&type=translation', // get  audio
+            // url: 'http://api.alquran.cloud/edition?format=audio&type=versebyverse&language=ar', // get  audio
+            // url: 'http://api.alquran.cloud/v1/meta',//Meta - Get meta data about Surahs, Pages, Hizbs and Juzs
+            // url: 'http://api.mp3quran.net/api/surah',
+            // url: 'http://api.alquran.cloud/surah',
+            // url: 'https://api.alquran.cloud/surah/7/editions/quran-simple-enhanced,ar.alafasy,en.transliteration,en.sahih,id.indonesian',
+            url: 'https://api.alquran.cloud/surah/1/editions',
 
         }).then((response) => {
-            // console.log(response, 'responese');
+            console.log(response, 'responese');
             // console.log(response.data.data.surahs.references);
-            setData(response.data.data.surahs.references)
+            // setData(response.data.data.surahs.references)
         })
+
+        // fetch("http://api.alquran.cloud/edition?format=text&type=translation")
+        //     .then(response => response.json())
+        //     .then(parsedJSON => {
+        //         console.log(parsedJSON);
+        //         const translations = groupBy(parsedJSON.data, translation => {
+        //             return translation.language;
+        //         });
+
+        //         // const languageKeys = Object.keys(translations);
+
+        //         // const translationOptions = languageKeys.map(language => {
+        //         //     let langTranslations = translations[language];
+        //         //     return {
+        //         //         label: ISO6391.getNativeName(language),
+        //         //         options: langTranslations.map(translation => {
+        //         //             return {
+        //         //                 value: translation.identifier,
+        //         //                 label: translation.name,
+        //         //                 group: ISO6391.getNativeName(language)
+        //         //             };
+        //         //         })
+        //         //     };
+        //         // });
+        //         // translationOptions.push({
+        //         //     label: "No Translation",
+        //         //     options: [
+        //         //         {
+        //         //             value: "null",
+        //         //             label: "No Translation",
+        //         //             group: "No Translation"
+        //         //         }
+        //         //     ]
+        //         // });
+        //         // //console.log("TranslationOptions", translationOptions);
+
+        //         // props.dispatch({
+        //         //     type: "TRANSLATIONLIST",
+        //         //     translationList: translationOptions
+        //         // });
+        //     });
+
     }, [])
 
 
@@ -29,14 +80,13 @@ export default function Audio() {
                 <div className="plyr v4 w-100">
 
 
-                    {
+                    {/* {
                         data.map((value, index) => {
                             // console.log(value);
                             return (
                                 <div key={index} className="player">
-                                    {/* <div className="cover"
-                                    style={{ backgroundImage: 'url("https://alim.nauthemes.com/wp-content/themes/alim/assets/images/audio-img2.jpg")' }}
-                                    /> */}
+                                    <div className="cover"
+                                    />
                                     <div className="info">
                                         <div className="title">
                                             {value.number}-
@@ -84,7 +134,7 @@ export default function Audio() {
 
                             )
                         })
-                    }
+                    } */}
 
 
 
