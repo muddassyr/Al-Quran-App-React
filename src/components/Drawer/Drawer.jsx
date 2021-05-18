@@ -19,6 +19,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 // import MailIcon from '@material-ui/icons/Mail';
 import AudiotrackIcon from '@material-ui/icons/Audiotrack';
 import BookIcon from '@material-ui/icons/Book';
+import PagesIcon from '@material-ui/icons/Pages';
+import InfoIcon from '@material-ui/icons/Info';
+
 import '../css/style.css'
 import {
   BrowserRouter as Router,
@@ -29,6 +32,8 @@ import {
 import Audio from '../Audio/Audio';
 import QuraanEKareem from '../QuraanEkareem/QuraanEKareem';
 import Surah from '../QuraanEkareem/Surah';
+import PaaraIndex from '../PaaraIndex/PaaraIndex';
+import AboutQuran from '../AboutQuran/AboutQuran';
 
 const drawerWidth = 240;
 
@@ -180,13 +185,32 @@ export default function LeftDrawer() {
               </Link>
               <ListItemText primary='Audio' />
             </ListItem>
+
             <ListItem>
               <Link to='/quranekareem'>
                 <ListItemIcon>
                   <BookIcon />
                 </ListItemIcon>
               </Link>
-              <ListItemText primary='Quran Kareem' />
+              <ListItemText primary='Surah Index' />
+            </ListItem>
+            
+            <ListItem>
+              <Link to='/paaraIndex'>
+                <ListItemIcon>
+                  <PagesIcon />
+                </ListItemIcon>
+              </Link>
+              <ListItemText primary='Paara Index' />
+            </ListItem>
+            
+            <ListItem>
+              <Link to='/aboutQuran'>
+                <ListItemIcon>
+                  <InfoIcon />
+                </ListItemIcon>
+              </Link>
+              <ListItemText primary='About Quran' />
             </ListItem>
           </List>
 
@@ -208,6 +232,12 @@ export default function LeftDrawer() {
               </Route>
               <Route path='/quranekareem/:id'>
                 <Surah />
+              </Route>
+              <Route path='/paaraIndex'>
+                <PaaraIndex />
+              </Route>
+              <Route path='/aboutQuran'>
+                <AboutQuran />
               </Route>
               <Route path='*' component={() => <h1>404 Not Found</h1>} />
 
