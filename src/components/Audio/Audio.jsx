@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-// import groupBy from "lodash/groupBy";
 
 import './audio.css'
 
@@ -20,6 +19,7 @@ export default function Audio() {
             // url: 'http://api.mp3quran.net/api/surah',
             // url: 'http://api.alquran.cloud/surah',
             // url: 'https://api.alquran.cloud/surah/7/editions/quran-simple-enhanced,ar.alafasy,en.transliteration,en.sahih,id.indonesian',
+            // url: 'https://api.alquran.cloud/surah/1/editions/quran-simple-enhanced,ar.alafasy,en.transliteration,en.sahih,id.indonesian',
             url: 'https://api.alquran.cloud/surah/1/editions',
 
         }).then((response) => {
