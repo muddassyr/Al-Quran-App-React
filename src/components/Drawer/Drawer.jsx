@@ -21,6 +21,7 @@ import AudiotrackIcon from '@material-ui/icons/Audiotrack';
 import BookIcon from '@material-ui/icons/Book';
 import PagesIcon from '@material-ui/icons/Pages';
 import InfoIcon from '@material-ui/icons/Info';
+import NoteIcon from '@material-ui/icons/Note';
 
 import '../css/style.css'
 import {
@@ -34,6 +35,7 @@ import QuraanEKareem from '../QuraanEkareem/QuraanEKareem';
 import Surah from '../QuraanEkareem/Surah';
 import PaaraIndex from '../PaaraIndex/PaaraIndex';
 import AboutQuran from '../AboutQuran/AboutQuran';
+import NeedToKnow from '../NeedToKnow/NeedToKnow';
 
 const drawerWidth = 240;
 
@@ -212,6 +214,15 @@ export default function LeftDrawer() {
               </Link>
               <ListItemText primary='About Quran' />
             </ListItem>
+            
+            <ListItem>
+              <Link to='/needToKnow'>
+                <ListItemIcon>
+                  <NoteIcon />
+                </ListItemIcon>
+              </Link>
+              <ListItemText primary='Need To Know' />
+            </ListItem>
           </List>
 
           {/* </Switch> */}
@@ -238,6 +249,9 @@ export default function LeftDrawer() {
               </Route>
               <Route path='/aboutQuran'>
                 <AboutQuran />
+              </Route>
+              <Route path='/needToKnow'>
+                <NeedToKnow />
               </Route>
               <Route path='*' component={() => <h1>404 Not Found</h1>} />
 
