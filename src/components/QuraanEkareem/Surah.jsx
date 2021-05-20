@@ -83,7 +83,7 @@ export default function Surah() {
     // const getSurahAyahs = getSurah.ayahs
     // setGetSurahAyahs(getSurah.ayahs)
 
-    if (!getSurah) return <h1>Surah not Found</h1>
+    if (!getSurah) return <h1>Loading ...</h1>
 
 
     return (
