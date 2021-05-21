@@ -105,6 +105,11 @@ const useStyles = makeStyles((theme) => ({
   titleColor: {
     color: 'white',
   },
+  link: {
+    textDecoration: 'none',
+    display: 'flex',
+    flexDirection: 'row'
+  },
 }));
 
 export default function LeftDrawer() {
@@ -180,50 +185,50 @@ export default function LeftDrawer() {
 
           <List className={classes.ulClass}>
             <ListItem>
-              <Link to='/'>
+              <Link to='/' className={classes.link}>
                 <ListItemIcon>
                   <AudiotrackIcon />
                 </ListItemIcon>
+                <ListItemText primary='Audio' />
               </Link>
-              <ListItemText primary='Audio' />
             </ListItem>
 
             <ListItem>
-              <Link to='/quranekareem'>
+              <Link to='/quranekareem' className={classes.link}>
                 <ListItemIcon>
                   <BookIcon />
                 </ListItemIcon>
+                <ListItemText primary='Surah Index' />
               </Link>
-              <ListItemText primary='Surah Index' />
             </ListItem>
-            
+
             <ListItem>
-              <Link to='/paaraIndex'>
+              <Link to='/paaraIndex' className={classes.link}>
                 <ListItemIcon>
                   <PagesIcon />
                 </ListItemIcon>
+                <ListItemText primary='Paara Index' />
               </Link>
-              <ListItemText primary='Paara Index' />
             </ListItem>
-            
+
             <ListItem>
-              <Link to='/aboutQuran'>
-                <ListItemIcon>
-                  <InfoIcon />
-                </ListItemIcon>
-              </Link>
-              <ListItemText primary='About Quran' />
-            </ListItem>
-            
-            <ListItem>
-              <Link to='/needToKnow'>
+              <Link to='/needToKnow' className={classes.link}>
                 <ListItemIcon>
                   <NoteIcon />
                 </ListItemIcon>
+                <ListItemText primary='Need To Know' />
               </Link>
-              <ListItemText primary='Need To Know' />
+            </ListItem>
+            <ListItem>
+              <Link to='/aboutQuran' className={classes.link}>
+                <ListItemIcon>
+                  <InfoIcon />
+                </ListItemIcon>
+                <ListItemText primary='About Quran' />
+              </Link>
             </ListItem>
           </List>
+
 
           {/* </Switch> */}
 
