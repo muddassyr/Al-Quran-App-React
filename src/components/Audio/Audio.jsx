@@ -28,54 +28,13 @@ export default function Audio() {
             // setData(response.data.data.surahs.references)
         })
 
-        // fetch("http://api.alquran.cloud/edition?format=text&type=translation")
-        //     .then(response => response.json())
-        //     .then(parsedJSON => {
-        //         console.log(parsedJSON);
-        //         const translations = groupBy(parsedJSON.data, translation => {
-        //             return translation.language;
-        //         });
-
-        //         // const languageKeys = Object.keys(translations);
-
-        //         // const translationOptions = languageKeys.map(language => {
-        //         //     let langTranslations = translations[language];
-        //         //     return {
-        //         //         label: ISO6391.getNativeName(language),
-        //         //         options: langTranslations.map(translation => {
-        //         //             return {
-        //         //                 value: translation.identifier,
-        //         //                 label: translation.name,
-        //         //                 group: ISO6391.getNativeName(language)
-        //         //             };
-        //         //         })
-        //         //     };
-        //         // });
-        //         // translationOptions.push({
-        //         //     label: "No Translation",
-        //         //     options: [
-        //         //         {
-        //         //             value: "null",
-        //         //             label: "No Translation",
-        //         //             group: "No Translation"
-        //         //         }
-        //         //     ]
-        //         // });
-        //         // //console.log("TranslationOptions", translationOptions);
-
-        //         // props.dispatch({
-        //         //     type: "TRANSLATIONLIST",
-        //         //     translationList: translationOptions
-        //         // });
-        //     });
 
     }, [])
 
 
     return (
-        <div
-        // style={{margin: '0 6rem'}}
-        >
+        <div>
+            <h1>Audio version comming soon</h1>
             <div className="plyr-box w-100 pat-bg white-layer opc85 back-blend-multiply bg-white">
                 <div className="plyr v4 w-100">
 
