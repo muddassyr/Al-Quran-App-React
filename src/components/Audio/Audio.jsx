@@ -23,7 +23,7 @@ export default function Audio() {
             url: 'https://api.alquran.cloud/surah/1/editions',
 
         }).then((response) => {
-            console.log(response, 'responese');
+            // console.log(response, 'responese');
             // console.log(response.data.data.surahs.references);
             // setData(response.data.data.surahs.references)
         })
