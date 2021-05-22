@@ -33,7 +33,7 @@ import {
 import Audio from '../Audio/Audio';
 import QuraanEKareem from '../QuraanEkareem/QuraanEKareem';
 import Surah from '../QuraanEkareem/Surah';
-import PaaraIndex from '../PaaraIndex/PaaraIndex';
+import CompleteQuran from '../CompleteQuran/CompleteQuran';
 import AboutQuran from '../AboutQuran/AboutQuran';
 import NeedToKnow from '../NeedToKnow/NeedToKnow';
 
@@ -203,11 +203,11 @@ export default function LeftDrawer() {
             </ListItem>
 
             <ListItem>
-              <Link to='/paaraIndex' className={classes.link}>
+              <Link to='/completeQuran' className={classes.link}>
                 <ListItemIcon>
                   <PagesIcon />
                 </ListItemIcon>
-                <ListItemText primary='Paara Index' />
+                <ListItemText primary='Complete Quran' />
               </Link>
             </ListItem>
 
@@ -249,8 +249,8 @@ export default function LeftDrawer() {
               <Route path='/quranekareem/:id'>
                 <Surah />
               </Route>
-              <Route path='/paaraIndex'>
-                <PaaraIndex />
+              <Route path='/completeQuran'>
+                <CompleteQuran />
               </Route>
               <Route path='/aboutQuran'>
                 <AboutQuran />
