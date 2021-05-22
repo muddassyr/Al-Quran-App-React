@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -23,26 +23,24 @@ const useStyles = makeStyles((theme) => ({
     },
     mapInside: {
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         color: 'black'
         // border: '1px solid black'
     },
-    apterMapInside: {
+    ayahs: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        // border: '1px solid black'
-
+        justifyContent: 'flex-end'
     },
 }));
 
 
 
-export default function PaaraIndex() {
+export default function CompleteQuran() {
 
 
     const classes = useStyles();
-    //   const [data, setData] = useState([])
+    const [data, setData] = useState([])
 
 
     useEffect(() => {
@@ -56,29 +54,54 @@ export default function PaaraIndex() {
             url: 'http://api.alquran.cloud/v1/quran',//complete quran
 
         }).then((response) => {
-            console.log(response);
-            // console.log(response.data.data.juzs);
-            //   setData(response.data.data.juzs)
+            // console.log(response);
+            console.log(response.data.data.surahs);
+            setData(response.data.data.surahs)
         })
 
     }, [])
+
+    if (!data) return <h1>Loading...</h1>
 
     return (
         <div className={classes.root}>
 
 
             <Grid item xs={12}>
-                <Paper className={classes.paperBackGround} >Juzs (Paara)</Paper>
+                <Paper className={classes.paperBackGround} >Complete Quran</Paper>
             </Grid>
             <hr />
-            {/* {
+            {
                 data.map((value, index) => {
+                    // console.log(value);
+                    const ayahsArray = value.ayahs
+                    // console.log(ayahsArray);
                     return (
                         <div key={index}>
 
                             <Grid item xs={12}>
                                 <Paper className={classes.paper}>
-                                    <div className={classes.mapInside}>
+                                    <h1>{value.name}</h1>
+                                    <div>
+                                        {ayahsArray.map((val, ind) => {
+                                            var newInd = ind++
+                                            console.log(newInd);
+                                            return <div className={classes.ayahs}>
+                                                <h4>
+                                                    ⃝
+                                                    </h4>
+                                                <h4>
+                                                    {val.text}
+                                                </h4>
+                                                <h4>
+                                                    -{newInd}
+                                                </h4>
+                                                {/* <h4><span> ⃝</span>{val.text} <span>-{ind}</span> </h4> */}
+                                            </div>
+                                        })
+
+                                        }
+
                                     </div>
                                 </Paper>
                                 <hr />
@@ -89,7 +112,7 @@ export default function PaaraIndex() {
                         </div>
                     )
                 })
-            } */}
+            }
 
         </div>
     )
