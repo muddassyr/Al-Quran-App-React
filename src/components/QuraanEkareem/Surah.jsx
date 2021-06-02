@@ -40,7 +40,12 @@ const useStyles = makeStyles((theme) => ({
     spanAyahs: {
         fontSize: '30px',
         fontWeight: '500',
-        color: 'black'
+        color: 'black',
+        textAlign: "right",
+    },
+    container: {
+        margin: " 0% 10%",
+        padding: " 0% 3%"
     },
     ayahNumber: {
         fontSize: '14px',
@@ -89,7 +94,7 @@ export default function Surah() {
     return (
         <div>
             <div
-                // style={{ width: '100%', border: '1px solid black' }}
+            // style={{ width: '100%', border: '1px solid black' }}
             >
                 <Grid item xs={12}>
                     <Paper className={classes.paper}>
@@ -116,25 +121,28 @@ export default function Surah() {
 
                         </div>
                         <hr />
-                        {
-                            getSurahAyahs.map((value, index) => {
-                                return (
-                                    <span
-                                        key={index}
-                                        className={classes.spanAyahs}
-                                    >
-                                        <h4 >
-                                            {value.text}
-                                            <span className={classes.ayahNumber}>
-                                                {value.number}
-                                            </span>
-                                        </h4>
+                        <div className={classes.container}>
+                            {
+                                getSurahAyahs.map((value, index) => {
+                                    return (
+                                        <span
+                                            key={index}
+                                            className={classes.spanAyahs}
+                                        >
+                                            <h4 >
+                                                {value.text}
+                                                <span className={classes.ayahNumber}>
+                                                    {value.number}
+                                                </span>
+                                            </h4>
 
-                                        <hr />
-                                    </span>
-                                )
-                            })
-                        }
+                                            <hr />
+                                        </span>
+                                    )
+                                })
+                            }
+                        </div>
+
                     </Paper>
                 </Grid>
 
