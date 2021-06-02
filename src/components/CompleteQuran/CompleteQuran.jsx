@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         textAlign: 'center',
-        color: theme.palette.text.secondary,
+        // color: theme.palette.text.secondary,
+        color: 'black'
     },
     paperBackGround: {
         padding: theme.spacing(2),
@@ -55,7 +56,7 @@ export default function CompleteQuran() {
 
         }).then((response) => {
             // console.log(response);
-            console.log(response.data.data.surahs);
+            // console.log(response.data.data.surahs);
             setData(response.data.data.surahs)
         })
 
@@ -85,13 +86,13 @@ export default function CompleteQuran() {
                                     <div>
                                         {ayahsArray.map((val, ind) => {
                                             var newInd = ind++
-                                            console.log(newInd);
+                                            // console.log(newInd);
                                             return <div className={classes.ayahs}>
-                                                <h4>
+                                                {/* <h4>
                                                     ⃝
-                                                    </h4>
+                                                </h4> */}
                                                 <h4>
-                                                    {val.text}
+                                                    ⃝{val.text}
                                                 </h4>
                                                 <h4>
                                                     -{newInd}

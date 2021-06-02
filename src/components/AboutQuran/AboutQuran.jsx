@@ -61,8 +61,6 @@ export default function AboutQuran() {
             delete datas.data.sajdas
             setData(datas.data)
             // console.log(data);
-
-
         }
         getData()
     }, [])

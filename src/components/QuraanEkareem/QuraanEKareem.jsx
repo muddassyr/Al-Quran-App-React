@@ -37,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     // border: '1px solid black'
 
   },
+  linkTag: {
+    textDecoration: "none"
+  },
 }));
 
 export default function QuraanEKareem() {
@@ -77,7 +80,7 @@ export default function QuraanEKareem() {
         return (
           <Link 
             key={index}
-            className=''
+            className={classes.linkTag}
             to={`/quranekareem/${index}`}
           >
           <div >

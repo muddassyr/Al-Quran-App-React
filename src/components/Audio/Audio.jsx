@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 
-import './audio.css'
-
 export default function Audio() {
 
     // const [data, setData] = useState([])
@@ -95,13 +93,6 @@ export default function Audio() {
                         })
                     } */}
 
-
-
-                    <ul className="playlist mb-0 list-unstyled">
-                        <li data-cover="https://alim.nauthemes.com/wp-content/themes/alim/assets/images/audio-img2.jpg" data-artist="(Tilawat)" className="active">
-                            <a href="https://alim.nauthemes.com/wp-content/uploads/2021/01/surah-fateh.mp3" title>Quran Majeed</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
 
