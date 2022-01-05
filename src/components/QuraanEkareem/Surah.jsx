@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import './surah.css'
+import gif from './105-loader-1.gif'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -88,7 +89,10 @@ export default function Surah() {
     // const getSurahAyahs = getSurah.ayahs
     // setGetSurahAyahs(getSurah.ayahs)
 
-    if (!getSurah) return <h1>Loading ...</h1>
+    // if (!getSurah) return <h1>Loading ...</h1>
+    if (!getSurah) return <div className='d-flex justify-content-center align-items-center'>
+        <img src={gif} alt="" width={250} />
+    </div>
 
 
     return (

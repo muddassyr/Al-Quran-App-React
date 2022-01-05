@@ -7,6 +7,7 @@ import '../css/style.css'
 import {
   Link
 } from "react-router-dom";
+import gif from './105-loader-1.gif'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,7 +49,7 @@ export default function QuraanEKareem() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-
+    // getFullData()
     axios({
       method: 'get',
       // url: 'http://api.alquran.cloud/v1/edition', //quran editon
@@ -66,6 +67,13 @@ export default function QuraanEKareem() {
     })
   }, [])
 
+  const getFullData = async () => {
+    const response = await axios.get("http://api.alquran.cloud/v1/quran/{{edition}}")
+    console.log("response ====>", response);
+    setData(response.data.data.surahs)
+
+  }
+
 
 
   return (
@@ -75,39 +83,42 @@ export default function QuraanEKareem() {
         <Paper className={classes.paperBackGround} >Surah Details</Paper>
       </Grid>
       <hr />
-      {data.map((value, index) => {
+      {data.length === 0 ? <div className='d-flex justify-content-center align-items-center'>
+        {/* <svg xmlns="http://www.w3.org/2000/svg" width={500} height={500} style={{ width: '100%', height: '100%', contentVisibility: 'visible' }}><defs><clipPath id="a"><path d="M0 0h500v500H0z" /></clipPath><clipPath id="b"><path d="M0 0h500v500H0z" /></clipPath></defs><g clipPath="url(#a)"><path strokeLinecap="round" strokeLinejoin="round" stroke="#121331" strokeWidth="32.199999999999996" d="M118.905 250.823c-.005-.276-.005-.547-.005-.823 0 0 0 0 0 0M248.855 249.177c-.005.276-.005.547-.005.823 0 0 0 0 0 0M378.805 250.823c-.005-.276-.005-.547-.005-.823 0 0 0 0 0 0" fill="none" display="block" /></g></svg> */}
+        <img src={gif} alt="" width={300} />
+      </div> : data.map((value, index) => {
         // console.log(value);
         return (
-          <Link 
+          <Link
             key={index}
             className={classes.linkTag}
             to={`/quranekareem/${index}`}
           >
-          <div >
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                <div className={classes.mapInside}>
-                  <div className={classes.apterMapInside}>
-                    <h4>{value.number}-{value.englishName}</h4>
-                    <h4>{value.name}</h4>
-                  </div>
+            <div >
+              <Grid item xs={12}>
+                <Paper className={classes.paper}>
+                  <div className={classes.mapInside}>
+                    <div className={classes.apterMapInside}>
+                      <h4>{value.number}-{value.englishName}</h4>
+                      <h4>{value.name}</h4>
+                    </div>
 
-                  <div className={classes.apterMapInside}>
-                    <h6>{value.englishNameTranslation}:{value.numberOfAyahs}</h6>
-                    <h6>{value.revelationType}</h6>
-                  </div>
+                    <div className={classes.apterMapInside}>
+                      <h6>{value.englishNameTranslation}:{value.numberOfAyahs}</h6>
+                      <h6>{value.revelationType}</h6>
+                    </div>
 
-                </div>
-                {/* {value.number} {value.englishName} {value.name}
+                  </div>
+                  {/* {value.number} {value.englishName} {value.name}
                 {value.numberOfAyahs} {value.revelationType} */}
-              </Paper>
-              <hr />
+                </Paper>
+                <hr />
 
-            </Grid>
+              </Grid>
 
-          </div>
+            </div>
           </Link>
-        
+
         )
       })
 

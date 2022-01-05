@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import '../css/style.css'
+import gif from '../QuraanEkareem/105-loader-1.gif'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,7 +63,9 @@ export default function CompleteQuran() {
 
     }, [])
 
-    if (!data) return <h1>Loading...</h1>
+    if (data.length === 0) return <div className='d-flex justify-content-center align-items-center'>
+    <img src={gif} alt="" width={250} />
+</div>   
 
     return (
         <div className={classes.root}>
