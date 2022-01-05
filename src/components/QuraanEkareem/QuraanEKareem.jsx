@@ -67,12 +67,12 @@ export default function QuraanEKareem() {
     })
   }, [])
 
-  const getFullData = async () => {
-    const response = await axios.get("http://api.alquran.cloud/v1/quran/{{edition}}")
-    console.log("response ====>", response);
-    setData(response.data.data.surahs)
+  // const getFullData = async () => {
+  //   const response = await axios.get("http://api.alquran.cloud/v1/quran/{{edition}}")
+  //   console.log("response ====>", response);
+  //   setData(response.data.data.surahs)
 
-  }
+  // }
 
 
 
