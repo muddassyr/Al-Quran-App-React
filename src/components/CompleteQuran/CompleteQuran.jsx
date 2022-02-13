@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import '../css/style.css'
-import gif from '../QuraanEkareem/105-loader-1.gif'
+// import gif from '../QuraanEkareem/105-loader-1.gif'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -63,8 +63,9 @@ export default function CompleteQuran() {
 
     }, [])
 
-    if (data.length === 0) return <div className='d-flex justify-content-center align-items-center'>
-    <img src={gif} alt="" width={250} />
+    if (data.length === 0) return <div className='d-flex justify-content-center align-items-center' style={{height:'70vh'}}>
+    {/* <img src={gif} alt="" width={250} /> */}
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={50} height={50} fill="none"><style dangerouslySetInnerHTML={{__html: "@keyframes loader4{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}" }} /><path stroke="#0A0A30" strokeLinecap="round" strokeWidth="1.5" d="M12 6.864v1.333m0 7.606v1.333M17.136 12h-1.333m-7.606 0H6.864m8.768 3.632l-.943-.943M9.311 9.311l-.943-.943m0 7.264l.943-.943m5.378-5.378l.943-.943" style={{animation: 'loader4 1.5s linear infinite both', transformOrigin: 'center center'}} /></svg>
 </div>   
 
     return (

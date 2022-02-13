@@ -7,7 +7,7 @@ import '../css/style.css'
 import {
   Link
 } from "react-router-dom";
-import gif from './105-loader-1.gif'
+// import gif from './105-loader-1.gif'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -83,9 +83,10 @@ export default function QuraanEKareem() {
         <Paper className={classes.paperBackGround} >Surah Details</Paper>
       </Grid>
       <hr />
-      {data.length === 0 ? <div className='d-flex justify-content-center align-items-center'>
+      {data.length === 0 ? <div className='d-flex justify-content-center align-items-center' style={{height: '70vh'}}>
         {/* <svg xmlns="http://www.w3.org/2000/svg" width={500} height={500} style={{ width: '100%', height: '100%', contentVisibility: 'visible' }}><defs><clipPath id="a"><path d="M0 0h500v500H0z" /></clipPath><clipPath id="b"><path d="M0 0h500v500H0z" /></clipPath></defs><g clipPath="url(#a)"><path strokeLinecap="round" strokeLinejoin="round" stroke="#121331" strokeWidth="32.199999999999996" d="M118.905 250.823c-.005-.276-.005-.547-.005-.823 0 0 0 0 0 0M248.855 249.177c-.005.276-.005.547-.005.823 0 0 0 0 0 0M378.805 250.823c-.005-.276-.005-.547-.005-.823 0 0 0 0 0 0" fill="none" display="block" /></g></svg> */}
-        <img src={gif} alt="" width={300} />
+        {/* <img src={gif} alt="" width={300} /> */}
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={50} height={50} fill="none"><style dangerouslySetInnerHTML={{__html: "@keyframes loader4{0%{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}" }} /><path stroke="#0A0A30" strokeLinecap="round" strokeWidth="1.5" d="M12 6.864v1.333m0 7.606v1.333M17.136 12h-1.333m-7.606 0H6.864m8.768 3.632l-.943-.943M9.311 9.311l-.943-.943m0 7.264l.943-.943m5.378-5.378l.943-.943" style={{animation: 'loader4 1.5s linear infinite both', transformOrigin: 'center center'}} /></svg>
       </div> : data.map((value, index) => {
         // console.log(value);
         return (
